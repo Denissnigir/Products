@@ -1,0 +1,96 @@
+﻿<Window x:Class="Prototype1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prototype1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="545" Width="950" MinHeight="434" MinWidth="950" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal">
+            <Image Source="materials\ЗАГЛУШКА.png" VerticalAlignment="Center" Height="35" Width="50"/>
+            <TextBlock Text="Продукты" FontSize="23" Margin="5, 0, 0, 0" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Button Content="Выход" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 5, 0"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.23*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox  Name="SearchBox" TextChanged="SearchBox_TextChanged" HorizontalAlignment="Stretch" Height="30" LostFocus="SearchBox_LostFocus" GotFocus="SearchBox_GotFocus"/>
+            <ComboBox HorizontalContentAlignment="Center" VerticalAlignment="Stretch" FontSize="18" Height="30" Grid.Column="1" Name="TypeBox" DisplayMemberPath="MaterialTypeName" SelectionChanged="TypeBox_SelectionChanged"/>
+            <ComboBox HorizontalContentAlignment="Center" VerticalAlignment="Stretch" FontSize="14" Height="30" Grid.Column="2" Name="SortBox" SelectionChanged="SortBox_SelectionChanged"/>
+            <TextBlock Grid.Column="3"  Name="MaterialsCount" FontSize="20" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
+        </Grid>
+        
+            
+        
+
+        <ListBox Grid.Row="2" Name="Materials" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.Resources>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="{Binding Color}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.2*"/>
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="0.2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Width="110" Height="110" >
+                            <Image.Source>
+                                <Binding Path="MaterialPicture">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>\materials\ЗАГЛУШКА.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="20, 25, 0, 0">
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{Binding MaterialType1.MaterialTypeName}" FontSize="25"/>
+                                <TextBlock Text=" | " FontSize="25"/>
+                                <TextBlock Text="{Binding MaterialName}" FontSize="25"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="Минимальное количество: " FontSize="18"/>
+                                <TextBlock Text="{Binding MaterialMinStorageAmount}" FontSize="18"/>
+                                <TextBlock Text=" шт" FontSize="18"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                <TextBlock Text="Поставщики: " FontSize="18" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Supplier}" TextWrapping="Wrap" Width="500" FontSize="18"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="0, 31, 15, 0"> 
+                            <TextBlock Text="Остаток: " FontSize="18"/>
+                            <TextBlock Text="{Binding MaterialStorageAmount}" FontSize="18"/>
+                            <TextBlock Text=" шт" FontSize="18"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Button Grid.Row="3" HorizontalAlignment="Left" Margin="10, 0, 0, 0" Content="Добавить материал" Width="170"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="&lt;" Width="18" Margin="10, 0, 10, 0"/>
+            <ComboBox Width="50" Height="30" Name="PageBox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" SelectionChanged="PageBox_SelectionChanged"/>
+            <Button Content="&gt;" Width="18" Margin="10, 0, 10, 0"/>
+        </StackPanel>
+    </Grid>
+</Window>

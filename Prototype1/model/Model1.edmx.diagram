@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2dabfb52e99c4ad4849788c9cc5311b5" Name="Diagram1">
+        <EntityTypeShape EntityType="user25Model.Agent" Width="1.5" PointX="13" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.AgentType" Width="1.5" PointX="10.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.Employee" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.EmployeeRole" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.Material" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.MaterialStorageAmountChangeHistory" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.MaterialSupplier" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.MaterialType" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.OperationType" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.PriorityChangeHistory" Width="1.5" PointX="15.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.Product" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.ProductMaterial" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.ProductMinPriceChangeHistory" Width="1.5" PointX="8.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.ProductProduction" Width="1.5" PointX="10.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.ProductType" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.SalePoint" Width="1.5" PointX="10.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.Standart" Width="1.5" PointX="3.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.Supplier" Width="1.5" PointX="6" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.SupplierType" Width="1.5" PointX="3.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.Unit" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user25Model.Workplace" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="user25Model.FK_Agent_AgentType" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Agent_SalePoint" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_PriorityChangeHistory_Agent" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Employee_EmployeeRole" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Employee_Workplace" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_MaterialStorageAmountChangeHistory_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_PriorityChangeHistory_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Material_MaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Material_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_MaterialStorageAmountChangeHistory_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_MaterialSupplier_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_ProductMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_MaterialStorageAmountChangeHistory_OperationType" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_MaterialSupplier_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Product_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Product_Standart" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_ProductMaterial_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_ProductMinPriceChangeHistory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_ProductProduction_ProductMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_ProductProduction_Workplace" ManuallyRouted="false" />
+        <AssociationConnector Association="user25Model.FK_Supplier_SupplierType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
