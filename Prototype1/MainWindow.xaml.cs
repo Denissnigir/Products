@@ -21,6 +21,7 @@ namespace Prototype1
     /// </summary>
     public partial class MainWindow : Window
     {
+
         List<MaterialType> materialTypeList = new List<MaterialType>();
 
         List<Material> materialList = new List<Material>();
@@ -29,7 +30,7 @@ namespace Prototype1
         {
             "Наименование (по возрастранию)",
             "Наименование (по убыванию)",
-            "Цена (по возрастанию)",
+            "Цена (по возрастанию)",                                                // Листы для всякой всячины
             "Цена (по убыванию)",
             "Остаток на складе (по возрастанию)",
             "Остаток на складе (по убыванию)"
@@ -48,8 +49,8 @@ namespace Prototype1
             SearchBox.Text = "Введите название материала";
 
             // Типы материалов
-            materialTypeList = connect.context.MaterialType.ToList();
-            materialTypeList.Insert(0, new MaterialType{MaterialTypeName  = "Все типы"});
+            materialTypeList = connect.context.MaterialType.ToList(); 
+            materialTypeList.Insert(0, new MaterialType{MaterialTypeName  = "Все типы"}); // Вставил "Все типы"
             
             // Выбор типа материала
             TypeBox.ItemsSource = materialTypeList;
@@ -66,7 +67,7 @@ namespace Prototype1
             Listing();
         }
 
-        private void Filter()
+        private void Filter() // Сортировка, фильтрация и поиск
         {
             // Фильтрация
             materialList = connect.context.Material.ToList();
@@ -148,7 +149,7 @@ namespace Prototype1
             }
         }
 
-        private void Listing()
+        private void Listing() // Вывод постранично
         {
             pageList.Clear();
 
